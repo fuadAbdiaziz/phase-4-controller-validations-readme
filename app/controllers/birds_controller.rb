@@ -1,6 +1,6 @@
 class BirdsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
-
+  wrap parameters: :false
   # GET /birds
   def index
     birds = Bird.all
